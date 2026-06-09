@@ -1,0 +1,13 @@
+[
+  {
+    "shortCode": "abc123",
+    "originalUrl": "https://google.com",
+    "clicks": 0
+  },
+  {
+    "shortCode": "QYxe8a",
+    "originalUrl": "https://github.com",
+    "clicks": 1,
+    "createdAt": "2026-06-09T20:18:59.209Z"
+  }
+]
