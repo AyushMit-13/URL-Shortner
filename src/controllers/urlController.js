@@ -16,12 +16,16 @@ function createShortUrl(req, res) {
 
   const shortCode = generateShortCode();
 
-  const newUrl = {
-    shortCode,
-    originalUrl: url,
-    clicks: 0,
-    createdAt: new Date().toISOString(),
-  };
+  const expiryDate = new Date();
+expiryDate.setDate(expiryDate.getDate() + 7);
+
+const newUrl = {
+  shortCode,
+  originalUrl: url,
+  clicks: 0,
+  createdAt: new Date().toISOString(),
+  expiryDate: expiryDate.toISOString(),
+};
 
   urls.push(newUrl);
 
@@ -47,6 +51,11 @@ function redirectUrl(req, res) {
       message: "Short URL not found",
     });
   }
+  if (new Date() > new Date(urlEntry.expiryDate)) {
+  return res.status(410).json({
+    message: "Short URL has expired",
+  });
+}
 
   urlEntry.clicks += 1;
 

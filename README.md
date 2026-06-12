@@ -17,6 +17,10 @@ This project was developed as a backend assignment to demonstrate API design, ro
 * URL validation
 * Rate limiting for URL creation
 * File-based persistence using JSON storage
+<<<<<<< HEAD
+=======
+* URL expiration support
+>>>>>>> a99026d (Add URL expiration support)
 
 ---
 
@@ -139,7 +143,15 @@ Response
 
 ## Create Short URL
 
+<<<<<<< HEAD
 ### POST /shorten
+=======
+### POST /shorten 
+{
+  "url": "https://github.com",
+  "expiryDays": 30
+}
+>>>>>>> a99026d (Add URL expiration support)
 
 Request
 
@@ -388,4 +400,7 @@ All errors are returned as JSON responses.
 Backend Assignment – URL Shortener Backend API
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a99026d (Add URL expiration support)
